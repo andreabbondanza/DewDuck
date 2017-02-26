@@ -4,6 +4,9 @@ using System.Reflection;
 using System.Linq;
 namespace DewCore
 {
+    /// <summary>
+    /// Dew duck class
+    /// </summary>
     public class DewDuck
     {
         /// <summary>

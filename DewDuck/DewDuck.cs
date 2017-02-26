@@ -36,7 +36,7 @@ namespace DewCore
             var methodsDuck1 = firstDuck.GetRuntimeMethods();
             foreach (var item in methodsDuck1)
             {
-                if (actions.FirstOrDefault((x) => { return x.ToString() == item.ToString(); }) == null)
+                if (actions.FirstOrDefault((x) => { return x == item.ToString(); }) == null)
                 {
                     return false;
                 }

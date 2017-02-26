@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
+
 namespace DewCore
 {
     /// <summary>
@@ -9,6 +10,25 @@ namespace DewCore
     /// </summary>
     public class DewDuck
     {
+        /// <summary>
+        /// Return true if the passed actions are methods in the passed duck
+        /// </summary>
+        /// <param name="duck1"></param>
+        /// <param name="actions"></param>
+        /// <returns></returns>
+        public static bool WhatThisDuckShouldDo(object duck1, List<string> actions)
+        {
+            var firstDuck = duck1.GetType();
+            var methodsDuck1 = firstDuck.GetRuntimeMethods();
+            foreach (var item in methodsDuck1)
+            {
+                if (actions.FirstOrDefault((x) => { return x.ToString() == item.ToString(); }) == null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         /// <summary>
         /// Check if the passed classes are compatibles, so they are ducks
         /// </summary>
@@ -28,8 +48,7 @@ namespace DewCore
                 if (comparator.FirstOrDefault((x) => { return x.ToString() == item.ToString(); }) == null)
                 {
                     return false;
-                }
-                
+                }                
             }
             return true;
         }

@@ -11,6 +11,20 @@ namespace DewCore
     public class DewDuck
     {
         /// <summary>
+        /// Return the list of methods of a duck
+        /// </summary>
+        /// <param name="duck"></param>
+        /// <returns></returns>
+        public static List<string> GetDuckMethodsList(object duck)
+        {
+            var result = new List<string>();
+            foreach (var item in duck.GetType().GetRuntimeMethods())
+            {
+                result.Add(item.ToString());
+            }
+            return result;
+        }
+        /// <summary>
         /// Return true if the passed actions are methods in the passed duck
         /// </summary>
         /// <param name="duck1"></param>

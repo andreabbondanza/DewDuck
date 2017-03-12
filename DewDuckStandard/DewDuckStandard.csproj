@@ -21,7 +21,7 @@
     <DocumentationFile>bin\Release\netstandard1.0\DewDuckStandard.xml</DocumentationFile>
   </PropertyGroup>
   <Target Name="Build">
-    <MSBuild Projects="DewDuck.sln" Properties="Configuration=Release;Platform=Any CPU" />
+    <MSBuild Projects="DewDuckStandard.csproj" Properties="Configuration=Release;Platform=Any CPU" />
   </Target>
 
 </Project>

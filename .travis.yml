@@ -1,6 +1,2 @@
 language: csharp
 solution: DewDuck.sln
-
-script:
-- dotnet restore
-- dotnet DewDuckStandard.csproj -c Release -f netcoreapp1.1.1
